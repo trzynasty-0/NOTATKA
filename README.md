@@ -1,6 +1,6 @@
 # NOTATKA
 Notatka z aplikacji Mobilnych - Android Studio, made by Maja and Szymon
-
+<pre>
 ==================== GIT ====================
    1. git init
 
@@ -27,7 +27,7 @@ inne komendy:
    - git add/rm - zapisuje plik (commituje)
    - git restore - usuwa niezapisane pliki (które nie były commitowane) -> wraca do poprzedniej wersji
    - mechaniktgmobilne - konto Pani na gicie
-
+</pre>
 
 ==================== Windows ====================
 
@@ -54,7 +54,7 @@ Komendy widoku:
    - sp -> do tekstu
    - dp -> do rozmiarów, marginów itp
 
-
+<pre>
 Komendy w java:
    - Toast (za stempelkiem)                -> powiadomienie dymkowe, alert
    - obiekt = findViewById(R.id.idObiektu) -> stworzenie obiektu z elementu z XML (w funkcji onCreate)
@@ -90,3 +90,4 @@ Komendy w java:
 
    - startActivity(intencja)                                     -> otwiera nowe oknienko, dajesz w dowolnym miejscu gdzie chcesz aby te okienko się otwarało np. w jakimś if
    - zmienna = getIntent().get...Extra("KLUCZ", wartośćDomyślna) -> pobierasz argumenty, które wyeksportowałeś we wcześniejszej klasie tworząc nowe okienko, (... -> typ danych, np. getIntExtra("KLUCZ", wartośćDomyślna))
+</pre>
