@@ -25,10 +25,10 @@ Notatka z aplikacji Mobilnych - Android Studio, made by Maja and Szymon
 
   inne komendy:
 
-   • git status - sprawdza czy coś jest do zapisania (commitowania)
-   • git add/rm - zapisuje plik (commituje)
-   • git restore - usuwa niezapisane pliki (które nie były commitowane) -> wraca do poprzedniej wersji
-   • mechaniktgmobilne - konto Pani na gicie
+   - git status - sprawdza czy coś jest do zapisania (commitowania)
+   - git add/rm - zapisuje plik (commituje)
+   - git restore - usuwa niezapisane pliki (które nie były commitowane) -> wraca do poprzedniej wersji
+   - mechaniktgmobilne - konto Pani na gicie
 
 
 ==================== Windows ====================
