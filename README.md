@@ -73,7 +73,7 @@ Komendy w java:
 ----- Zapis
             
    • protected void onSaveInstanceState(...)   -> możliwość zapisywania rzeczy 
-   • outState.put...()                         -> wymagane zdefiniowanie w powyższej funkcji co zapisujemy 
+   • outState.put...()                         -> wymagane zdefiniowanie w powyższej funkcji co zapisujemy
                                                       np. putInt("KLUCZ", zmiennaZWaroscia)
    • jak ma wyglądać: 
       protected void onSaveInstanceState(@NonNull Bundle outState) {
@@ -83,9 +83,9 @@ Komendy w java:
             
 ----- Działania na zapisie
             
-   • savedInstanceState            -> to obiekt, który ma wszystkie zapisane informacje 
+   • savedInstanceState            -> to obiekt, który ma wszystkie zapisane informacje
                                           z powyższej funkcji onSaveInstanceState(...)
-   • savedInstanceState.get...()   -> pobiera zapisaną wartość po kluczu, należy podać 
+   • savedInstanceState.get...()   -> pobiera zapisaną wartość po kluczu, należy podać
                                           typ pobieranej wartości np getInt("KLUCZ")
    • przykład użycia:
       if(savedInstanceState != null){
@@ -99,13 +99,13 @@ Komendy w java:
                                                              w main, gdzie chcesz aby się otwarło
    • Intencja                                        -> znaczy co chcesz wykonać
    • Intent intencja = new Intent(Skąd, dokąd)       -> np (MainActivity.this, InneActivity.class)
-   • intencja.putExtra('KLUCZ', zmienna)             -> możliwość dodania argumentu (dajesz zmienną jaką 
+   • intencja.putExtra('KLUCZ', zmienna)             -> możliwość dodania argumentu (dajesz zmienną jaką
                                                              chcesz wyeksportować do klasy nowego okienka)
 
 ----- Nowe okienko w swojej klasie
             
    • zmienna = getIntent().get...Extra("KLUCZ", wartośćDomyślna) -> pobierasz argumenty, które 
-                       np. getIntExtra("KLUCZ", wartośćDomyślna)        wyeksportowałeś we wcześniejszej 
+                       np. getIntExtra("KLUCZ", wartośćDomyślna)        wyeksportowałeś we wcześniejszej
                                                                         klasie tworząc nowe okienko.
                                                 
 
