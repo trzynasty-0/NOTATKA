@@ -56,6 +56,8 @@ Komendy widoku:
 
 
 Komendy w java:
+----- podstawowe
+   
    • Toast (za stempelkiem)                  -> powiadomienie dymkowe, alert
    • obiekt = findViewById(R.id.idObiektu)   -> stworzenie obiektu z elementu z XML (w funkcji onCreate)
 
@@ -68,27 +70,43 @@ Komendy w java:
           }
       ) 
 
+----- Zapis
+            
    • protected void onSaveInstanceState(...)   -> możliwość zapisywania rzeczy 
-   • outState.put...()                         -> wymagane zdefiniowanie w powyższej funkcji co zapisujemy np putInt("KLUCZ", zmiennaZWaroscia)
+   • outState.put...()                         -> wymagane zdefiniowanie w powyższej funkcji co zapisujemy 
+                                                      np. putInt("KLUCZ", zmiennaZWaroscia)
    • jak ma wyglądać: 
-          protected void onSaveInstanceState(@NonNull Bundle outState) {
-              super.onSaveInstanceState(outState);
-              outState.putInt("wartoscZapisanychPolubien", iloscPolubien);
-          }
-
-   • savedInstanceState            -> to obiekt, który ma wszystkie zapisane informacje z powyższej funkcji onSaveInstanceState(...)
-   • savedInstanceState.get...()   -> pobiera zapisaną wartość po kluczu, należy podać typ pobieranej wartości np getInt("KLUCZ")
+      protected void onSaveInstanceState(@NonNull Bundle outState) {
+         super.onSaveInstanceState(outState);
+         outState.putInt("wartoscZapisanychPolubien", iloscPolubien);
+      }
+            
+----- Działania na zapisie
+            
+   • savedInstanceState            -> to obiekt, który ma wszystkie zapisane informacje 
+                                          z powyższej funkcji onSaveInstanceState(...)
+   • savedInstanceState.get...()   -> pobiera zapisaną wartość po kluczu, należy podać 
+                                          typ pobieranej wartości np getInt("KLUCZ")
    • przykład użycia:
-        if(savedInstanceState != null){
-            wartosc =  savedInstanceState.getInt("ZAPISANA_WARTOSC");
-            jakisTekst.setText(Integer.toString(wartosc) + " - to zapisana wartosc");
-        }
+      if(savedInstanceState != null){
+         wartosc =  savedInstanceState.getInt("ZAPISANA_WARTOSC");
+         jakisTekst.setText(Integer.toString(wartosc) + " - to zapisana wartosc");
+      }
+            
+----- Nowe okienko w main
+            
+   • startActivity(intencja)                          -> otwiera nowe oknienko, dajesz w dowolnym miejscu
+                                                             w main, gdzie chcesz aby się otwarło
+   • Intencja                                        -> znaczy co chcesz wykonać
+   • Intent intencja = new Intent(Skąd, dokąd)       -> np (MainActivity.this, InneActivity.class)
+   • intencja.putExtra('KLUCZ', zmienna)             -> możliwość dodania argumentu (dajesz zmienną jaką 
+                                                             chcesz wyeksportować do klasy nowego okienka)
 
-   • Intencja                                          -> znaczy co chcesz wykonać
-   • Intent intencja = new Intent(Z czego, do czego)   -> np (MainActivity.this, InneActivity.class)
-   • intencja.putExtra('KLUCZ', zmienna)               -> możliwość dodania argumentu (dajesz zmienną jaką chcesz wyeksportować/skopjować do klasy nowego okienka)
-
-   • startActivity(intencja)                                       -> otwiera nowe oknienko, dajesz w dowolnym miejscu gdzie chcesz aby te okienko się otwarało np. w jakimś if
-   • zmienna = getIntent().get...Extra("KLUCZ", wartośćDomyślna)   -> pobierasz argumenty, które wyeksportowałeś we wcześniejszej klasie tworząc nowe okienko, (... -> typ danych, np. getIntExtra("KLUCZ", wartośćDomyślna))
+----- Nowe okienko w swojej klasie
+            
+   • zmienna = getIntent().get...Extra("KLUCZ", wartośćDomyślna) -> pobierasz argumenty, które 
+                       np. getIntExtra("KLUCZ", wartośćDomyślna)        wyeksportowałeś we wcześniejszej 
+                                                                        klasie tworząc nowe okienko.
+                                                
 
 </pre>
