@@ -57,7 +57,7 @@ Komendy widoku:
 
 Komendy w java:
 ----- podstawowe
-   
+   • zmienna.setVisibility(View.INVISIBLE);  -> ukryj zmienną
    • Toast (za stempelkiem)                  -> powiadomienie dymkowe, alert
    • obiekt = findViewById(R.id.idObiektu)   -> stworzenie obiektu z elementu z XML (w funkcji onCreate)
 
@@ -107,6 +107,9 @@ Komendy w java:
    • zmienna = getIntent().get...Extra("KLUCZ", wartośćDomyślna) -> pobierasz argumenty, które 
                        np. getIntExtra("KLUCZ", wartośćDomyślna)        wyeksportowałeś we wcześniejszej
                                                                         klasie tworząc nowe okienko.
-                                                
 
+----- Ikonka zmiana
+
+   • drawable (prawy przycisk myszy) -> new -> Image Asset (zmień tylko name to do góry) -> next -> finish
+   • AndroidManifest.xml -> add
 </pre>
