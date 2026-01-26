@@ -1,0 +1,69 @@
+<array name="kategorie">             -w string
+        <item>Pieczywo</item>
+        <item>Mięso</item>
+</array>
+
+
+
+private ArrayList<Przedmiot> przedmioty = new ArrayList<>();
+private ArrayAdapter<Przedmiot> arrayAdapter;
+
+
+
+arrayAdapter = new ArrayAdapter<>(    - tworzy adapter
+                this,
+                android.R.layout.simple_list_item_1, 
+                przedmioty       -będzie reagował na zmiany w liście przedmioty
+        );
+
+
+
+listView.setAdapter(arrayAdapter); - ustawia adapter do listView (gdy będzie zmiana w liście przedmioty listView automatycznie się zaktualizuje
+
+
+
+if(!nazwa.getText().toString().isEmpty() || !cena.getText().toString().isEmpty()){
+       String kategoria = (String) kategoriaInput.getSelectedItem().toString();
+       String nazwa2 = nazwa.getText().toString();
+       float cena2 = Float.parseFloat(cena.getText().toString());
+
+       przedmioty.add(new Przedmiot(nazwa2, cena2, kategoria)); - dodawanie do listy
+
+       arrayAdapter.notifyDataSetChanged(); - powiadomienie o zmianie
+
+       nazwa.setText("");   - czyszczenie
+       cena.setText("");
+
+       ilosc.setText("Koszyk: " + przedmioty.size());
+       suma.setText("Suma: " + sumaCen() + "zł");
+}
+
+
+
+kategoriaInput.getSelectedItem().toString() - do spinnera
+
+
+
+
+listView.setOnItemClickListener() - do klikania itemów w listView
+
+np. 
+TextView textView = (TextView) view;
+     if(przedmioty.get(position).getCzyKupione() == false){
+          textView.setPaintFlags(Paint.STRIKE_THRU_TEXT_FLAG);
+          przedmioty.get(position).setCzyKupione(true);
+      }
+     else{
+          textView.setPaintFlags(0);
+          przedmioty.get(position).setCzyKupione(false);
+      }
+          ilosc.setText("Koszyk: " + przedmioty.size());
+          suma.setText("Suma: " + sumaCen() + "zł");
+
+
+
+
+listView.setOnItemLongClickListener() - do dłuższego przytrzymania itemów w listView (np. usuwanie)
+
+przedmioty.remove(position);
+arrayAdapter.notifyDataSetChanged();
